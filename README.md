@@ -27,4 +27,4 @@
 
 - Sign in
 ![Sign in](https://github.com/ngmiho/laptopshopwebsite/blob/main/img/readme/layout11.png)
-#### © 2024 hint-code
+#### © 2024 ngmiho
