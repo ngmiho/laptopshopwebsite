@@ -1,0 +1,117 @@
+<article class="row mt-3" id="top">
+    <div class="col-md-8">
+      <div class="card text-bg-dark">
+        <!-- nav-tabs -->
+        <div class="card-header">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">MSI</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Asus</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="nav-tabContent">
+            <!-- MSI -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+              
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="1">
+              <div class="tab-content" id="nav-tabContent">
+                <!-- ASUS -->
+                <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="1">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <img src="img/{{product.image}}" alt="" class="w-100" >
+                    </div>
+                    <div class="col-md-6 mt-2">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-secondary">
+                          <h4>{{product.name}}</h4>
+                        </li>
+                        <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                        <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                        <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                        <li class="list-group-item bg-secondary" style="color:white;">{{product.price | number : 0}} <sup><u>đ</u></sup></li>
+                        <li class="list-group-item bg-secondary" style="color:white;">TẶNG: -{{product.discount}}%</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row mb-5">
+                    <div ng-model="productDetail" class="col-md-2" ng-repeat="sp in productDetail track by $index">
+                      <div class="card">
+                        <img src="img/{{sp}}" alt="" class="d-block w-100">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Sản phẩm khác -->
+                  <div class="row">
+                    <div class="col-md-4 my-4" ng-repeat="product in arrProduct | limitTo : 6 : start">
+                      <div class="card text-center">
+                        <img src="img/{{product.image}}" alt="">
+                        <hr>
+                        <button type="button" class="btn btn-secondary" ng-click="chooseProduct($index)">{{product.name}}</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Phân trang - Pagination -->
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a class="page-link" href="#" ng-click="showPage(0)">Previous</a>
+                      </li>
+                      <li ng-model="p" class="page-item" ng-repeat="p in numberOfPage">
+                        <a class="page-link" href="#" ng-click="showPage(p)">{{p + 1}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" ng-click="showPage(totalPage - 1)">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="1">...</div>
+                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="2">...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <!-- search button -->
+      <div class="col-md-12">
+        <div class="card" data-bs-toggle="collapse" href="#collapseGioHang" role="button" aria-expanded="false" aria-controls="collapseGioHang">
+          <div class="card-header">
+            <h4>
+              <i class="fa-solid fa-cart-shopping fa-bounce"></i>
+              Giỏ hàng
+            </h4>
+          </div>
+          <ul class="list-group list-group-flush" id="collapseGioHang">
+            <li class="list-group-item">Số lượng sản phẩm: {{arrCart.length}}</li>
+            <li class="list-group-item">Thành tiền: {{cartTotal | number : 0}} VND</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12 my-3">
+        <div class="card" data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+          <div class="card-header">
+            <h4>MÁY TÍNH</h4>
+          </div>
+          <ul class="list-group list-group-flush" id="collapse2">
+            <li class="list-group-item">MSI</li>
+            <li class="list-group-item">Asus</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <div class="card-header">
+            <h4>PHỤ KIỆN</h4>
+          </div>
+          <ul class="list-group list-group-flush" id="collapseExample">
+            <li class="list-group-item">Chuột</li>
+            <li class="list-group-item">Máy tính</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</article>

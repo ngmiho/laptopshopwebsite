@@ -1,0 +1,41 @@
+<article class="row mt-2">
+  <div class="col-md-8 offset-2 my-3">
+      <div class="card ms-5" style="width: 50rem;">
+          <div class="card-header" style="font-size:larger; font-weight:500;">
+              <i class="fa-regular fa-pen-to-square"></i>
+              ĐĂNG NHẬP
+          </div>
+          <div class="card-body">
+              <form class="row gy-3">
+                  <div class="col-md-12">
+                      <label class="form-label">Tài khoản</label>
+                      <input type="text" ng-model="account" class="form-control">
+                      {{account}}
+                  </div>
+                  <div class="col-md-12">
+                      <label class="form-label">Mật khẩu</label>
+                      <input type="password" ng-model="password" class="form-control">
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me?</label>
+                      </div>
+                  </div>
+                  {{password}}
+                  <div class="col-md-12 me-4 mb-4">
+                      <button type="button" class="btn btn-outline-secondary" style="width:120px;">
+                          Đăng nhập
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary" style="width:80px;">
+                          Hủy
+                      </button>
+                  </div>
+                  <div class="text-danger" ng-show="account != acc[0].account || password != acc[0].password">Thông tin tài khoản chưa trùng khớp!</div>
+                  <div ng-show="account === acc[0].account && password === acc[0].password">Thông tin tài khoản trùng khớp!</div>
+              </form>
+          </div>
+          <div class="card-footer">
+              Vui lòng nhập đầy đủ thông tin
+          </div>
+      </div>
+  </div>
+</article>

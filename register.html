@@ -1,0 +1,52 @@
+<article class="row mt-2">
+  <div class="col-md-8 offset-2 my-3">
+      <div class="card ms-5" style="width: 50rem;">
+          <div class="card-header" style="font-size:larger; font-weight:500;">
+              <i class="fa-regular fa-pen-to-square"></i>
+              ĐĂNG KÝ
+          </div>
+          <div class="card-body">
+              <form class="row gy-3" name="checkVar">
+                  <div class="col-md-12">
+                      <label class="form-label">Tài khoản</label>
+                      <input type="text" name="account" ng-model="account" class="form-control" required>
+                      <div class="text-danger" ng-show="checkVar.account.$invalid">Vui lòng nhập thông tin tài khoản!</div>
+                    </div>
+                  <div class="col-md-12">
+                      <label class="form-label">Mật khẩu</label>
+                      <input type="password" name="password1" ng-model="password1" id="disabledTextInput" class="form-control"
+                      minlength="6" ng-change="checkPasswordStatus()" required>
+                      <div class="text-danger" ng-show="checkVar.password1.$invalid">Mật khẩu từ 6 kí tự trở lên.</div>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="disabledTextInput" class="form-label">Nhập lại mật khẩu</label>
+                    <input type="password" name="password2" ng-model="password2" id="disabledTextInput" class="form-control" 
+                    value="password2">
+                    <div class="text-danger" ng-show="!checkPasswordStatus()">Mật khẩu chưa trùng khớp!</div>
+                    
+                </div>
+                  <div class="col-md-12">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" name="email" ng-model="email" class="form-control" id="exampleInputEmail1" 
+                      aria-describedby="emailHelp" required>
+                      <div class="text-danger" ng-show="checkVar.email.$invalid">Định dạng email có chứa kí tự @</div>
+                    </div>
+                  <div class="col-md-12 me-4 mb-4">
+                      <button type="button" class="btn btn-outline-secondary" style="width:80px;">
+                          <i class="fa-solid fa-floppy-disk"></i>Gửi
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary" style="width:80px;">
+                          <i class="fa-solid fa-stop"></i>
+                          Hủy
+                      </button>
+                      <div ng-show="checkVar.$invalid">Chưa hợp lệ!</div>
+                      <div ng-show="checkVar.$valid">Đã hợp lệ!</div>
+                  </div>
+              </form>
+          </div>
+          <div class="card-footer">
+              Vui lòng nhập đầy đủ thông tin
+          </div>
+      </div>
+  </div>
+</article>

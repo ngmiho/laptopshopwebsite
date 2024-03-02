@@ -1,0 +1,410 @@
+  <!-- MSI -->
+<div class="row my-4">
+  <div class="row">
+    <div class="col-md-2">
+        <div class="card">
+            <img src="img/category/category1.png" alt="">
+        </div>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-4 mt-1" ng-repeat="p in arrMsi1 | limitTo : 3 : pageMsi">
+          <div class="card text-center">
+            <img src="img/msi/{{p.image}}" alt="">
+            <hr>
+            <!-- button modal -->
+            <button type="button" class="btn btn-secondary" ng-click="chooseProductMsi($index)"
+            data-bs-toggle="modal" data-bs-target="#msiModal"
+            style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- modal -->
+     <div class="modal fade" id="msiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-secondary">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- product detail -->
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/msi/{{product.image}}" alt="" class="d-block w-100" >
+              </div>
+              <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">
+                    <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                    <br>
+                    <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                      {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                    </span>
+                  </li>
+                  <li class="list-group-item bg-secondary" style="color:white;">
+                    TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/msi/{{productDetail.image1}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/msi/{{productDetail.image2}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/msi/{{productDetail.image3}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/msi/{{productDetail.image4}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MSI -->
+  <!-- Phân trang - Pagination -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center mt-2">
+      <li class="page-item">
+        <a class="page-link text-secondary" href="#" ng-click="showPageMsi(0)">Previous</a>
+      </li>
+      <li ng-model="p" class="page-item" ng-repeat="p in numberOfPageMsi">
+        <a class="page-link text-secondary" href="#" ng-click="showPageMsi(p)">{{p + 1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-secondary" href="#" ng-click="showPageMsi(totalPageMsi - 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+  <!-- Asus -->
+  <div class="row my-4">
+    <div class="col-md-10">
+      <div class="row bg-secondary">
+        <div class="col-md-4 my-2" ng-repeat="p in arrAsus1 | limitTo : 3 : pageAsus">
+          <div class="card text-center">
+            <img src="img/asus/{{p.image}}" alt="">
+            <hr>
+            <!-- button modal -->
+            <button type="button" class="btn btn-secondary" ng-click="chooseProductAsus($index)"
+            data-bs-toggle="modal" data-bs-target="#asusModal"
+            style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="card">
+          <img src="img/category/category2.png" alt="">
+      </div>
+    </div>
+     <!-- modal -->
+     <div class="modal fade" id="asusModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-secondary">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- product detail -->
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/asus/{{product.image}}" alt="" class="d-block w-100" >
+              </div>
+              <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">
+                    <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                    <br>
+                    <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                      {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                    </span>
+                  </li>
+                  <li class="list-group-item bg-secondary" style="color:white;">
+                    TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/asus/{{productDetail.image1}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/asus/{{productDetail.image2}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/asus/{{productDetail.image3}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/asus/{{productDetail.image4}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Asus -->
+    <!-- Phân trang - Pagination -->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center mt-2">
+        <li class="page-item">
+          <a class="page-link text-secondary" href="#" ng-click="showPageAsus(0)">Previous</a> 
+        </li>
+        <li class="page-item" ng-repeat="p in numberOfPageAsus">
+          <a class="page-link text-secondary" href="#" ng-model="p" ng-click="showPageAsus(p)">{{p + 1}}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link text-secondary" href="#" ng-click="howPageAsus(totalPageAsus - 1)">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Acer-->
+<div class="row my-4">
+  <div class="row">
+    <div class="col-md-2">
+        <div class="card">
+            <img src="img/category/category3.png" alt="">
+        </div>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-4 mt-1" ng-repeat="p in arrAcer1 | limitTo : 3 : pageAcer">
+          <div class="card text-center">
+            <img src="img/acer/{{p.image}}" alt="">
+            <hr>
+            <!-- button modal -->
+            <button type="button" class="btn btn-secondary" ng-click="chooseProductAcer($index)"
+            data-bs-toggle="modal" data-bs-target="#acerModal"
+            style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- modal -->
+     <div class="modal fade" id="acerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-secondary">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- product detail -->
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/acer/{{product.image}}" alt="" class="d-block w-100" >
+              </div>
+              <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                  <li class="list-group-item bg-secondary" style="color:white;">
+                    <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                    <br>
+                    <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                      {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                    </span>
+                  </li>
+                  <li class="list-group-item bg-secondary" style="color:white;">
+                    TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/acer/{{productDetail.image1}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/acer/{{productDetail.image2}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/acer/{{productDetail.image3}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card mt-1">
+                      <img src="img/acer/{{productDetail.image4}}" alt="" class="d-block w-100">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Acer -->
+  <!-- Phân trang - Pagination -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center mt-2">
+      <li class="page-item">
+        <a class="page-link text-secondary" href="#" ng-click="showPageAcer(0)">Previous</a>
+      </li>
+      <li ng-model="p" class="page-item" ng-repeat="p in numberOfPageAcer">
+        <a class="page-link text-secondary" href="#" ng-click="showPageAcer(p)">{{p + 1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-secondary" href="#" ng-click="showPageAcer(totalPageAcer - 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Accessory -->
+<div class="row my-4">
+  <div class="col-md-10">
+    <div class="row bg-secondary">
+      <div class="col-md-4 my-2" ng-repeat="p in arrAccessory1 | limitTo : 3 : pageAccessory">
+        <div class="card text-center">
+          <img src="img/accessory/{{p.image}}" alt="">
+          <hr>
+          <!-- button modal -->
+          <button type="button" class="btn btn-secondary" ng-click="chooseProductAccessory($index)"
+          data-bs-toggle="modal" data-bs-target="#accessoryModal"
+          style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="card">
+        <img src="img/category/category4.png" alt="">
+    </div>
+  </div>
+   <!-- modal -->
+   <div class="modal fade" id="accessoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-secondary">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- product detail -->
+          <div class="row">
+            <div class="col-md-6">
+              <img src="img/accessory/{{product.image}}" alt="" class="d-block w-100" >
+            </div>
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                <li class="list-group-item bg-secondary" style="color:white;">
+                  <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                  <br>
+                  <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                    {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                  </span>
+                </li>
+                <li class="list-group-item bg-secondary" style="color:white;">
+                  TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="card mt-1">
+                    <img src="img/accessory/{{productDetail.image1}}" alt="" class="d-block w-100">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card mt-1">
+                    <img src="img/accessory/{{productDetail.image2}}" alt="" class="d-block w-100">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card mt-1">
+                    <img src="img/accessory/{{productDetail.image3}}" alt="" class="d-block w-100">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card mt-1">
+                    <img src="img/accessory/{{productDetail.image4}}" alt="" class="d-block w-100">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Accessory -->
+  <!-- Phân trang - Pagination -->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center mt-2">
+      <li class="page-item">
+        <a class="page-link text-secondary" href="#" ng-click="showPageAccessory(0)">Previous</a> 
+      </li>
+      <li class="page-item" ng-repeat="p in numberOfPageAccessory">
+        <a class="page-link text-secondary" href="#" ng-model="p" ng-click="showPageAccessory(p)">{{p + 1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link text-secondary" href="#" ng-click="howPageAccessory(totalPageAccessory - 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>

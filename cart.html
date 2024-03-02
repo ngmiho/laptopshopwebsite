@@ -1,0 +1,78 @@
+
+<div class="container">
+  <!-- cart -->
+  <div class="col-md-12 mt-3">
+    <div class="col-md-12">
+      <!-- payment -->
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>
+              Thanh toán
+            </h2>
+            <!-- table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>TÊN SẢN PHẨM</th>
+          <th>ĐƠN GIÁ</th>
+          <th>THÀNH TIỀN</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="p in arrCart track by $index">
+          <td>{{$index + 1}}</td>
+          <td>{{p.name}}</td>
+          <td>{{p.price | number : 0}}</td>
+          <td>{{(p.price - (p.price * (p.discount / 100))) | number : 0}}</td>
+          <td><button class="btn btn-danger" ng-click="deleteRow($index)">XÓA</button></td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+          <ul class="list-group text-center">
+            <li class="list-group-item">Số lượng sản phẩm: {{arrCart.length}}</li>
+            <li class="list-group-item" style="font-weight:bold;">Giảm: {{cartDiscount | number : 0}} VND</li>
+            <li class="list-group-item" style="font-weight:bold;">Tổng tiền cần thanh toán: {{cartTotal | number : 0}} VND</li>
+          </ul>
+          <div class="card-header text-center">
+              <h2>
+                Phương thức thanh toán
+              </h2>
+            </div>
+            <div class="col-md-11 ms-5 mt-2">
+              <form>
+                  <div class="row mb-3">
+                  <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Thanh toán bằng</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                          Visa
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                          Momo
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                        <label class="form-check-label" for="gridRadios3">
+                          Tiền mặt
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <button class="btn btn-secondary" ng-click="makePayment()">Thanh Toán</button>
+                  <div ng-show="checkPayment" class="text-center">Thanh toán thành công</div>
+                  <div ng-show="!checkPayment" class="text-center">Thanh toán không thành công</div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

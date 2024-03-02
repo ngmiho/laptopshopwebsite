@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<htmll lang="en">
+<head>
+    <!-- Assignment gd 2 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app="myApp" ng-controller="productCtrl">
+        <!-- Navbar -->
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg border-body sticky-top bg-dark p3" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">MyLaptop</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Trang chủ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#!store">Sản phẩm</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Về chúng tôi
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="#!form">Tuyển dụng</a></li>
+                      <li><a class="dropdown-item" href="#">Hình thành</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Liên hệ</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex pe-2">
+                  <div class="col-md-3">
+                    <div class="card text-bg-dark" style="width:auto;">
+                      <button type="button" class="btn btn-secondary">
+                        <a href="#!cart" style="text-decoration:none;" class="text-light"><i class="fa-solid fa-cart-shopping pe-1"></i>{{arrCart.length}}</a>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mx-2" style="width:auto;">
+                    <button type="button" class="btn btn-outline-secondary">
+                      <a href="#!register" style="color:white; text-decoration:none;">
+                        Đăng ký
+                      </a>
+                    </button>
+                  </div>
+                  <div class="col-md-4" style="width:auto;">
+                    <button type="button" class="btn btn-outline-secondary">
+                      <a href="#!signin" style="color:white; text-decoration:none;">
+                        Đăng nhập
+                      </a>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+          <div class="container">
+            <!-- Header + Card + Carousel -->
+          <header class="row mt-2">
+            <div class="col-md-12">
+              <div class="card text-bg-dark ">
+                <img src="img/header.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <div class="col-md-12">
+                    <div id="carouselExampleDark" class="carousel carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="4000">
+                          <img src="img/carousel/carousel1.jpg" alt="..." style="width:45rem;height:22rem;">
+                          <div class="carousel-caption d-none d-md-block">
+                          </div>
+                        </div>
+                        <div class="carousel-item" ng-repeat="p in arrCarousel track by $index" data-bs-interval="4000">
+                          <img src="img/carousel/{{p.image}}" alt="..." style="width:45rem;height:22rem;">
+                          <div class="carousel-caption d-none d-md-block">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+
+
+          <!-- Article -->
+          <div class="ng-view"></div>
+          </div>
+
+          <!-- footer -->
+          <div class="container-fluid">
+            <div class="row text-bg-dark py-2 mx-1  my-3 rounded-0">
+              <div class="col-md-3">
+                <div class="card-body">
+                  <h5 class="card-title">Về MyLaptop</h5>
+                  <p class="card-text">
+                    Phone: 090xxxxxxx
+                    <br>
+                    Email: mylaptop@gmail.com
+                    <br>
+                    <hr>
+                    <i class="fa-regular fa-copyright"></i> My Laptop
+                    <br>
+                    Khu vực: Việt Nam
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 offset-5 p-4">
+                  <div class="card-body text-end">
+                    <p class="card-text">
+                      <a href="#" class="text-light">
+                        <i class="fa-brands fa-tiktok"></i>
+                      </a>
+                      <br>
+                      <a href="#" class="text-light">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                      </a>
+                      <br>
+                      <a href="#" class="text-light">
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                      <br>
+                      <a href="#" class="text-light">
+                        <i class="fa-brands fa-square-youtube"></i>
+                      </a>
+                      <br>
+                      <a href="#" class="text-light">
+                        <i class="fa-brands fa-facebook"></i>
+                      </a>
+                      
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/code.angularjs.org_1.8.2_angular-route.min.js"></script>
+    <script src="https://kit.fontawesome.com/288196cb77.js" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+</htmll>

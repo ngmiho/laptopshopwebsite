@@ -1,0 +1,444 @@
+<div class="row">
+  <!-- sản phẩm - product - collapse -->
+          <!-- collapse - msi -->
+          <div class="row my-3">
+            <!-- #collasape -->
+            <div class="col-md-12">
+              <div class="row">
+                <!-- msi -->
+              <div class="col-md-1 my-2 offset-2">
+                <p class="d-inline-flex gap-1">
+                  <a class="btn" data-bs-toggle="collapse" href="#collapseMsi" role="button" aria-expanded="false" aria-controls="collapseAsus">
+                    <img class="img-fluid rounded-circle border" src="img/store/store1.png" alt="">
+                  </a>
+                </p>
+              </div>
+              <!-- msi -->
+              <!-- asus -->
+              <div class="col-md-1 my-2 offset-1">
+                <p class="d-inline-flex gap-1">
+                  <a class="btn" data-bs-toggle="collapse" href="#collapseAsus" role="button" aria-expanded="false" aria-controls="collapseAsus">
+                    <img class="img-fluid rounded-circle border" src="img/store/store2.png" alt="">
+                  </a>
+                </p>
+              </div>
+              <!-- asus -->
+              <!-- acer -->
+              <div class="col-md-1 my-2 offset-1">
+                <p class="d-inline-flex gap-1">
+                  <a class="btn" data-bs-toggle="collapse" href="#collapseAcer" role="button" aria-expanded="false" aria-controls="collapseAcer">
+                    <img class="img-fluid rounded-circle border" src="img/store/store3.png" alt="">
+                  </a>
+                </p>
+              </div>
+              <!-- acer -->
+              <!-- Accessory -->
+              <div class="col-md-1 my-2 offset-1">
+                <p class="d-inline-flex gap-1">
+                  <a class="btn" data-bs-toggle="collapse" href="#collapseAccessory" role="button" aria-expanded="false" aria-controls="collapseAccessory">
+                    <img class="img-fluid rounded-circle border" src="img/store/store4.png" alt="">
+                  </a>
+                </p>
+              </div>
+              <!-- Accessory -->
+              </div>
+            </div>
+            <!-- #collapse -->
+
+            <!-- collapse -->
+            <!-- msi -->
+            <div class="col-md-12">
+              <div class="collapse" id="collapseMsi">
+                <div class="col-md-12 mb-3">
+                  <div class="card bordered-3 m-3">
+                    <!-- tìm kiếm - search -->
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search"
+                      ng-model="searchMsi">
+                      <button class="btn btn-outline-secondary" type="submit">Tìm</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col-md-2">
+                    <div class="card">
+                      SẮP XẾP THEO:
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <button class="btn btn-secondary" ng-click="sortBy('name')">
+                      Tên
+                    </button>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-secondary" ng-click="sortBy('price')">
+                      Giá
+                    </button>
+                  </div>
+                </div>
+                <div class="card card-body bg-secondary">
+                  <div class="row">
+                    <div class="col-md-3 my-2" ng-repeat="p in arrMsi1 | orderBy : sort : true |filter : searchMsi : false">
+                      <div class="card text-center">
+                        <img src="img/msi/{{p.image}}" alt="">
+                        <hr>
+                        <!-- button modal -->
+                        <button type="button" class="btn btn-secondary" ng-click="chooseProductAsus($index)"
+                        data-bs-toggle="modal" data-bs-target="#msiModal"
+                        style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal -->
+                <div class="modal fade" id="msiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-secondary">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- product detail -->
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="img/msi/{{product.image}}" alt="" class="d-block w-100" >
+                          </div>
+                          <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                                <br>
+                                <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                                  {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/msi/{{productDetail.image1}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/msi/{{productDetail.image2}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/msi/{{productDetail.image3}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/msi/{{productDetail.image4}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- msi -->
+             <!-- Asus -->
+             <div class="col-md-12">
+              <div class="collapse" id="collapseAsus">
+                <div class="col-md-12 mb-3">
+                  <div class="card bordered-3 m-3">
+                    <!-- tìm kiếm - search -->
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search"
+                      ng-model="searchAsus">
+                      <button class="btn btn-outline-secondary" type="submit">Tìm</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="card card-body bg-secondary">
+                  <div class="row">
+                    <div class="col-md-3 my-2" ng-repeat="p in arrAsus1 | filter : searchAsus : false">
+                      <div class="card text-center">
+                        <img src="img/asus/{{p.image}}" alt="">
+                        <hr>
+                        <!-- button modal -->
+                        <button type="button" class="btn btn-secondary" ng-click="chooseProductAsus($index)"
+                        data-bs-toggle="modal" data-bs-target="#asusModal"
+                        style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal -->
+                <div class="modal fade" id="asusModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-secondary">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- product detail -->
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="img/asus/{{product.image}}" alt="" class="d-block w-100" >
+                          </div>
+                          <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                                <br>
+                                <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                                  {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/asus/{{productDetail.image1}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/asus/{{productDetail.image2}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/asus/{{productDetail.image3}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/asus/{{productDetail.image4}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Asus -->
+            <!-- Acer -->
+            <div class="col-md-12">
+              <div class="collapse" id="collapseAcer">
+                <div class="col-md-12 mb-3">
+                  <div class="card bordered-3 m-3">
+                    <!-- tìm kiếm - search -->
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search"
+                      ng-model="searcAcer">
+                      <button class="btn btn-outline-secondary" type="submit">Tìm</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="card card-body bg-secondary">
+                  <div class="row">
+                    <div class="col-md-3 my-2" ng-repeat="p in arrAcer1 | filter : searchAcer : false">
+                      <div class="card text-center">
+                        <img src="img/acer/{{p.image}}" alt="">
+                        <hr>
+                        <!-- button modal -->
+                        <button type="button" class="btn btn-secondary" ng-click="chooseProductAcer($index)"
+                        data-bs-toggle="modal" data-bs-target="#acerModal"
+                        style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal -->
+                <div class="modal fade" id="acerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-secondary">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">{{product.name}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- product detail -->
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="img/acer/{{product.image}}" alt="" class="d-block w-100" >
+                          </div>
+                          <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                                <br>
+                                <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                                  {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/acer/{{productDetail.image1}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/acer/{{productDetail.image2}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/acer/{{productDetail.image3}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/acer/{{productDetail.image4}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Acer -->
+            <!-- Accessory -->
+            <div class="col-md-12">
+              <div class="collapse" id="collapseAccessory">
+                <div class="col-md-12 mb-3">
+                  <div class="card bordered-3 m-3">
+                    <!-- tìm kiếm - search -->
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search"
+                      ng-model="searchAccessory">
+                      <button class="btn btn-outline-secondary" type="submit">Tìm</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="card card-body bg-secondary">
+                  <div class="row">
+                    <div class="col-md-3 my-2" ng-repeat="p in arrAccessory1 | filter : searchAccessory : false">
+                      <div class="card text-center">
+                        <img src="img/accessory/{{p.image}}" alt="">
+                        <hr>
+                        <!-- button modal -->
+                        <button type="button" class="btn btn-secondary" ng-click="chooseProductAccessory($index)"
+                        data-bs-toggle="modal" data-bs-target="#accessoryModal"
+                        style="max-width:340px;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">{{p.name}}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal -->
+                <div class="modal fade" id="accessoryModal" tabindex="-1" aria-labelledby="accessoryModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-secondary">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="accessoryModalLabel">{{product.name}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- product detail -->
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="img/accessory/{{product.image}}" alt="" class="d-block w-100" >
+                          </div>
+                          <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item bg-secondary" style="color:white;">CPU: {{product.cpu}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">VGA: {{product.vga}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">MAIN: {{product.main}} | RAM: {{product.ram}}  | SSD: {{product.ssd}}</li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                <del class="ms-2">{{product.price | number : 0}} <sup><u>đ</u></sup></del>
+                                <br>
+                                <span class="badge rounded-pill border bg-danger" style="font-size:18px;">
+                                  {{product.price - (product.price * (product.discount / 100)) | number : 0}} <sup><u>đ</u></sup>
+                                </span>
+                              </li>
+                              <li class="list-group-item bg-secondary" style="color:white;">
+                                TẶNG: <span class="badge text-warning" style="font-size:16px;">-{{product.discount}}%</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/accessory/{{productDetail.image1}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/accessory/{{productDetail.image2}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/accessory/{{productDetail.image3}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="card mt-1">
+                                  <img src="img/accessory/{{productDetail.image4}}" alt="" class="d-block w-100">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" ng-click="addCart(product)">Thêm vào giỏ hàng</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Accessory -->
+            <!-- collapse -->
+          </div>
+</div>

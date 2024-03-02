@@ -1,0 +1,88 @@
+{
+    "carousel" : 
+    [
+        {"image" : "carousel2.jpg"},
+        {"image" : "carousel3.jpg"}
+
+    ],
+    "category" : 
+    [
+        {"image" : "category1.png"},
+        {"image" : "category2.png"},
+        {"image" : "category3.png"},
+        {"image" : "category4.png"}
+    ],
+    "msi1" : 
+    [
+        {"id" : "msi1", "name" : "Laptop gaming MSI TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop11.png"},
+        {"id" : "msi2", "name" : "Laptop gaming MSI TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop21.png"},
+        {"id" : "msi3", "name" : "Laptop gaming MSI TUF F15 FX507ZC4 HN074W", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop31.png"},
+        {"id" : "msi4", "name" : "Laptop gaming MSI ROG Strix G16", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop11.png"},
+        {"id" : "msi5", "name" : "Laptop gaming MSI TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop21.png"},
+        {"id" : "msi6", "name" : "Laptop gaming MSI TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop31.png"},
+        {"id" : "msi7", "name" : "Laptop gaming MSI TUF F15 FX507ZC4 HN074W", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop11.png"},
+        {"id" : "msi8", "name" : "Laptop gaming MSI ROG Strix G16", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop21.png"}
+
+    ],
+    "msi2" : 
+    [
+        {"image1" : "laptop12.png", "image2" : "laptop13.png", "image3" : "laptop14.png", "image4" : "laptop15.png"},
+        {"image1" : "laptop22.png", "image2" : "laptop23.png", "image3" : "laptop24.png", "image4" : "laptop25.png"},
+        {"image1" : "laptop32.png", "image2" : "laptop33.png", "image3" : "laptop34.png", "image4" : "laptop35.png"},
+        {"image1" : "laptop42.png", "image2" : "laptop43.png", "image3" : "laptop44.png", "image4" : "laptop45.png"},
+        {"image1" : "laptop12.png", "image2" : "laptop13.png", "image3" : "laptop14.png", "image4" : "laptop15.png"},
+        {"image1" : "laptop22.png", "image2" : "laptop23.png", "image3" : "laptop24.png", "image4" : "laptop25.png"},
+        {"image1" : "laptop32.png", "image2" : "laptop33.png", "image3" : "laptop34.png", "image4" : "laptop35.png"},
+        {"image1" : "laptop42.png", "image2" : "laptop43.png", "image3" : "laptop44.png", "image4" : "laptop45.png"}
+    ],
+    "asus1" : 
+    [
+        {"id" : "asus1", "name" : "Laptop gaming ASUS TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop11.png"},
+        {"id" : "asus2", "name" : "Laptop gaming ASUS TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop21.png"},
+        {"id" : "asus3", "name" : "Laptop gaming ASUS TUF F15 FX507ZC4 HN074W", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop31.png"},
+        {"id" : "asus4", "name" : "Laptop gaming ASUS ROG Strix G16", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop11.png"},
+        {"id" : "asus5", "name" : "Laptop gaming ASUS TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop21.png"},
+        {"id" : "asus6", "name" : "Laptop gaming ASUS TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop31.png"},
+        {"id" : "asus7", "name" : "Laptop gaming ASUS TUF F15 FX507ZC4 HN074W", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop11.png"},
+        {"id" : "asus8", "name" : "Laptop gaming ASUS ROG Strix G16", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop21.png"},
+        {"id" : "asus9", "name" : "Laptop gaming ASUS TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop31.png"},
+        {"id" : "asus10", "name" : "Laptop gaming ASUS TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop11.png"},
+        {"id" : "asus11", "name" : "Laptop gaming ASUS TUF F15 FX507ZC4 HN074W", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop21.png"}
+
+    ],
+    "asus2" : 
+    [
+        {"image1" : "laptop12.png", "image2" : "laptop13.png", "image3" : "laptop14.png", "image4" : "laptop15.png"},
+        {"image1" : "laptop22.png", "image2" : "laptop23.png", "image3" : "laptop24.png", "image4" : "laptop25.png"},
+        {"image1" : "laptop32.png", "image2" : "laptop33.png", "image3" : "laptop34.png", "image4" : "laptop35.png"},
+        {"image1" : "laptop42.png", "image2" : "laptop43.png", "image3" : "laptop44.png", "image4" : "laptop45.png"},
+        {"image1" : "laptop12.png", "image2" : "laptop13.png", "image3" : "laptop14.png", "image4" : "laptop15.png"},
+        {"image1" : "laptop22.png", "image2" : "laptop23.png", "image3" : "laptop24.png", "image4" : "laptop25.png"},
+        {"image1" : "laptop32.png", "image2" : "laptop33.png", "image3" : "laptop34.png", "image4" : "laptop35.png"},
+        {"image1" : "laptop42.png", "image2" : "laptop43.png", "image3" : "laptop44.png", "image4" : "laptop45.png"}
+    ],
+    "acer1" : 
+    [
+        {"id" : "acer1", "name" : "Laptop ACER TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop11.png"},
+        {"id" : "acer2", "name" : "Laptop ACER TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop21.png"},
+        {"id" : "acer3", "name" : "Laptop ACER TUF F15 FX507ZC4 HN074W", "cpu" : "cpu", "vga" : "vga", "main": "main", "ram" : "ram", "ssd" : "ssd", "price" : "", "discount" : "", "image" : "laptop31.png"},
+        {"id" : "acer4", "name" : "Laptop ACER TUF Gaming A15", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 29490000, "discount" : 13, "image" : "laptop11.png"},
+        {"id" : "acer2", "name" : "Laptop ACER TUF A15 FA507NU LP031W", "cpu" : "8 GB", "vga" : "RTX 3050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 30490000, "discount" : 11, "image" : "laptop21.png"}
+    ],
+    "acer2" : 
+    [
+        {"image1" : "laptop12.png", "image2" : "laptop13.png", "image3" : "laptop14.png", "image4" : "laptop15.png"},
+        {"image1" : "laptop22.png", "image2" : "laptop23.png", "image3" : "laptop24.png", "image4" : "laptop25.png"},
+        {"image1" : "laptop32.png", "image2" : "laptop33.png", "image3" : "laptop34.png", "image4" : "laptop35.png"},
+        {"image1" : "laptop12.png", "image2" : "laptop13.png", "image3" : "laptop14.png", "image4" : "laptop15.png"},
+        {"image1" : "laptop22.png", "image2" : "laptop23.png", "image3" : "laptop24.png", "image4" : "laptop25.png"}
+    ],
+    "accessory1" : 
+    [
+        {"id" : "accessory1", "name" : "Balo", "cpu" : "8 GB", "vga" : "RTX 4050", "main": "144 Hz", "ram" : "R7-7735HS", "ssd" : "512 GB", "price" : 2990000, "discount" : 13, "image" : "image11.png"}
+    ],
+    "accessory2" : 
+    [
+        {"image1" : "image12.png", "image2" : "image13.png", "image3" : "image14.png", "image4" : "image15.png"}
+    ]
+}
